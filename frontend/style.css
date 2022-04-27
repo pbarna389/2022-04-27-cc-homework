@@ -1,0 +1,61 @@
+#root {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+#root > section > .cards {
+  width: 15%;
+  padding: 10px;
+}
+
+#root > section:nth-child(odd) {
+  background-color: green;
+  color: bisque;
+}
+
+#root > section:nth-child(even) {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.cards {
+  position: relative;
+  width: 300px;
+  height: 500px;
+}
+
+.cards-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.7s ease-in-out;
+}
+
+.flipCardY {
+  transform: rotateY(180deg);
+}
+
+.flipCardX {
+  transform: rotateX(180deg);
+}
+
+.cards-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* text-transform: rotateY(180deg); */
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.cards-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+}
